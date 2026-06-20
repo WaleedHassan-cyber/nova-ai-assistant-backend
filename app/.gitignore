@@ -1,0 +1,15 @@
+# Environment & secrets — NEVER commit
+.env
+
+# Firebase service account key — NEVER commit (public repo!)
+serviceAccountKey.json
+
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / Scratches (JetBrains/PyCharm specific)
+.idea/
