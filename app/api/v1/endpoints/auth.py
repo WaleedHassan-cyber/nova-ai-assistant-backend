@@ -177,9 +177,9 @@ async def login(
                 "user_id": user_id,
                 "username": user["username"],
                 "email": user["email"],
-                "profilePicUrl": user.get("profile_pic_url"),
-                "log_alerts": user.get("log_alerts"),
-                "is2FAEnabled": user.get("is2FAEnabled"),
+                "profile_pic_url": user.get("profile_pic_url"),
+                "log_alerts": user.get("log_alerts", False),
+                "is2FAEnabled": user.get("is2FAEnabled", False),
             }
         except HTTPException as he:
             print(f"[DEBUG LOGIN] HTTP Exception caught: {he.detail}")
@@ -209,9 +209,8 @@ async def login(
         "username": user["username"],
         "email": user["email"],
         "profile_pic_url": user.get("profile_pic_url"),
-        "log_alert": user["log_alerts"],
-        "is2FAEnabled":user["is2FAEnabled"],
-        "profilePicUrl":user["profile_pic_url"]
+        "log_alerts": user.get("log_alerts", False),
+        "is2FAEnabled": user.get("is2FAEnabled", False),
     }
 
 @router.post("/resend-otp")
